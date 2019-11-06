@@ -4,14 +4,23 @@ import AddTodo from "./addForm";
 
 class App extends Component {
   state = {
-    todos: [
-      { id: 1, content: "Buy some milk" },
-      { id: 2, content: "Vacuum" },
-      { id: 3, content: "Buy some new extra stuff!" },
-      { id: 4, content: "Prepare to the exams" },
-      { id: 5, content: "Bartek" }
-    ]
+    todos: []
   };
+
+  componentDidMount() {
+    const { loc } = this.props;
+    console.log(loc);
+
+    let newState = loc.map(todo => {
+      let obj = {};
+      obj.id = todo[0];
+      obj.content = todo[1];
+      return obj;
+    });
+    console.log(newState);
+    this.setState({ todos: newState });
+    console.log(this.state);
+  }
 
   deleteTodo = id => {
     const todos = this.state.todos.filter(todo => {
@@ -20,6 +29,8 @@ class App extends Component {
     this.setState({
       todos
     });
+    localStorage.removeItem(id);
+    console.log(localStorage);
   };
   addTodo = todo => {
     todo.id = todo.content + Math.random();
@@ -27,9 +38,12 @@ class App extends Component {
     this.setState({
       todos
     });
+    localStorage.setItem(todo.id, todo.content);
+    console.log(localStorage);
   };
 
   render() {
+    console.log(this.props);
     return (
       <div className="todo-app container">
         <h1 className="center #ffab91 deep-orange lighten-3 z-depth-2">
