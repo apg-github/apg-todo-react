@@ -27,3 +27,7 @@ h5 {
 h1 > span {
   letter-spacing: 0.7rem;
 }
+
+div > span {
+  letter-spacing: 0.1rem;
+}
