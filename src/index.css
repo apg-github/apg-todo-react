@@ -20,6 +20,8 @@ form {
 input {
   width: 70% !important;
   margin: 0 1rem 1rem 1rem !important;
+  font-family: "Playfair Display", serif !important;
+  letter-spacing: 0.1rem;
 }
 h5 {
   padding: 1rem 1rem !important;
