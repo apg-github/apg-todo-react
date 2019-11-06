@@ -15,7 +15,10 @@ class AddTodo extends Component {
   render() {
     return (
       <div>
-        <form className="#ffffff white" onSubmit={this.handleSubmit}>
+        <form
+          className="#ffffff white lighten-3 z-depth-1 "
+          onSubmit={this.handleSubmit}
+        >
           <label className="center">
             <h5>Add new todo:</h5>
           </label>

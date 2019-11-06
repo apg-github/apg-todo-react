@@ -46,7 +46,7 @@ class App extends Component {
     //console.log(this.props);
     return (
       <div className="todo-app container">
-        <h1 className="center #ffab91 deep-orange lighten-3 z-depth-2">
+        <h1 className="center #ffab91 #4db6ac teal lighten-3  z-depth-2">
           <span className="">Todo's</span>
         </h1>
         <AddTodo addTodo={this.addTodo} />

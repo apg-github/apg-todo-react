@@ -5,7 +5,7 @@ const Todos = ({ todos, deleteTodo }) => {
     todos.map(todo => {
       return (
         <div
-          className="collection-item"
+          className="collection-item z-depth-1 lighten-3"
           key={todo.id}
           onClick={() => {
             deleteTodo(todo.id);
