@@ -6,7 +6,7 @@ import * as serviceWorker from "./serviceWorker";
 
 //const updateFromLocalStorage = () => {
 const loc = Object.entries(localStorage);
-console.log(loc);
+//console.log(loc);
 //};
 
 window.addEventListener("DOMContentLoaded", event => {

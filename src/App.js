@@ -9,7 +9,7 @@ class App extends Component {
 
   componentDidMount() {
     const { loc } = this.props;
-    console.log(loc);
+    //console.log(loc);
 
     let newState = loc.map(todo => {
       let obj = {};
@@ -17,9 +17,9 @@ class App extends Component {
       obj.content = todo[1];
       return obj;
     });
-    console.log(newState);
+    //console.log(newState);
     this.setState({ todos: newState });
-    console.log(this.state);
+    //console.log(this.state);
   }
 
   deleteTodo = id => {
@@ -30,7 +30,7 @@ class App extends Component {
       todos
     });
     localStorage.removeItem(id);
-    console.log(localStorage);
+    //console.log(localStorage);
   };
   addTodo = todo => {
     todo.id = todo.content + Math.random();
@@ -39,11 +39,11 @@ class App extends Component {
       todos
     });
     localStorage.setItem(todo.id, todo.content);
-    console.log(localStorage);
+    //console.log(localStorage);
   };
 
   render() {
-    console.log(this.props);
+    //console.log(this.props);
     return (
       <div className="todo-app container">
         <h1 className="center #ffab91 deep-orange lighten-3 z-depth-2">
