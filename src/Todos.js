@@ -1,6 +1,9 @@
 import React from "react";
 
 const Todos = ({ todos, deleteTodo }) => {
+  const handleMouseOver = e => {};
+
+  const handleMouseLeave = e => {};
   const list = todos.length ? (
     todos.map(todo => {
       return (
@@ -10,13 +13,19 @@ const Todos = ({ todos, deleteTodo }) => {
           onClick={() => {
             deleteTodo(todo.id);
           }}
+          onMouseOver={handleMouseOver}
+          onMouseLeave={handleMouseLeave}
         >
           <span
+            className=""
             onClick={() => {
               deleteTodo(todo.id);
             }}
           >
             {todo.content}
+            <a href="/" className="right tick">
+              <i className="fa fa-check"></i>
+            </a>
           </span>
         </div>
       );

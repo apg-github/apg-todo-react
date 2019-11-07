@@ -33,3 +33,19 @@ h1 > span {
 div > span {
   letter-spacing: 0.1rem;
 }
+.fa-check {
+  color: rgb(220, 231, 227);
+}
+.right:hover {
+  cursor: default;
+}
+.tick {
+  cursor: default;
+}
+
+.collection-item i {
+  transition: color 0.1s ease-out;
+}
+.collection-item:hover i {
+  color: rgb(46, 168, 184);
+}
