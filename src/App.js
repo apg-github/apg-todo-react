@@ -9,41 +9,40 @@ class App extends Component {
 
   componentDidMount() {
     const { loc } = this.props;
-    //console.log(loc);
 
     let newState = loc.map(todo => {
-      let obj = {};
-      obj.id = todo[0];
-      obj.content = todo[1];
+      let obj = { id: todo[0], content: todo[1] };
+      //obj.id = todo[0];
+      //obj.content = todo[1];
       return obj;
     });
-    //console.log(newState);
+
     this.setState({ todos: newState });
-    //console.log(this.state);
   }
 
   deleteTodo = id => {
     const todos = this.state.todos.filter(todo => {
       return todo.id !== id;
     });
+
     this.setState({
       todos
     });
+
     localStorage.removeItem(id);
-    //console.log(localStorage);
   };
   addTodo = todo => {
-    todo.id = todo.content + Math.random();
+    todo.id = new Date().getTime();
     let todos = [...this.state.todos, todo];
+
     this.setState({
       todos
     });
+
     localStorage.setItem(todo.id, todo.content);
-    //console.log(localStorage);
   };
 
   render() {
-    //console.log(this.props);
     return (
       <div className="todo-app container">
         <h1 className="center #ffab91 #4db6ac teal lighten-3  z-depth-2">

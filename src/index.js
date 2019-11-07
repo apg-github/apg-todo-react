@@ -4,15 +4,23 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 
-//const updateFromLocalStorage = () => {
-const loc = Object.entries(localStorage);
-//console.log(loc);
-//};
+//function to sort localstorage object before send it by props
+const compareArrays = (a, b) => {
+  const key1 = a[0];
+  const key2 = b[0];
 
-window.addEventListener("DOMContentLoaded", event => {
-  console.log("DOM fully loaded and parsed");
-  //updateFromLocalStorage();
-});
+  let comparison = 0;
+  if (key1 > key2) {
+    comparison = 1;
+  } else if (key1 < key2) {
+    comparison = -1;
+  }
+  return comparison;
+};
+
+const plainLoc = Object.entries(localStorage);
+const loc = plainLoc.sort(compareArrays);
+
 ReactDOM.render(<App loc={loc} />, document.getElementById("root"));
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
