@@ -17,7 +17,7 @@ const Todos = ({ todos, deleteTodo }) => {
           onMouseLeave={handleMouseLeave}
         >
           <span
-            className=""
+            className="noselect"
             onClick={() => {
               deleteTodo(todo.id);
             }}
