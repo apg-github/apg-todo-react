@@ -12,8 +12,6 @@ class App extends Component {
 
     let newState = loc.map(todo => {
       let obj = { id: todo[0], content: todo[1] };
-      //obj.id = todo[0];
-      //obj.content = todo[1];
       return obj;
     });
 
@@ -31,6 +29,7 @@ class App extends Component {
 
     localStorage.removeItem(id);
   };
+
   addTodo = todo => {
     todo.id = new Date().getTime();
     let todos = [...this.state.todos, todo];
@@ -46,7 +45,7 @@ class App extends Component {
     return (
       <div className="todo-app container">
         <h1 className="center #ffab91 #4db6ac teal lighten-3  z-depth-2">
-          <span className="">Todo's</span>
+          <span className="noselect">Todo's</span>
         </h1>
         <AddTodo addTodo={this.addTodo} />
         <Todos todos={this.state.todos} deleteTodo={this.deleteTodo} />

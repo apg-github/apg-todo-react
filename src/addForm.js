@@ -20,7 +20,7 @@ class AddTodo extends Component {
           onSubmit={this.handleSubmit}
         >
           <label className="center">
-            <h5>Add new todo:</h5>
+            <h5 className="noselect">Add new todo:</h5>
           </label>
           <input
             type="text"
